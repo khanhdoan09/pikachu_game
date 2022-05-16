@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pikachu Game</title>
+    <link rel="stylesheet" href="asset/css/intro.css">
+
+</head>
+<body>
+
+
+
+
+
+<audio id="audioBase" autoplay preload="audio" src="/asset/audio/GameOfThrones.mp3"></audio>
+<video autoplay muted loop class="videoBackground">
+    <source src="/asset/img/background/video1-background.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+    <div class="contain">
+
+        <div class="contain__title">
+            <h1 class="title">
+                <span class="P">P</span>
+                <span class="O1">O</span>
+                <span class="K">K</span>
+                <span class="E1">E</span>
+                <span class="M1">M</span>
+                <span class="O2">O</span>
+                <span class="N">N</span>
+                <span class="N"> </span>
+                <span class="G">G</span>
+                <span class="A">A</span>
+                <span class="M2">M</span>
+                <span class="E2">E</span>
+            </h1>
+
+            <div class="load">
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+        <div class="contain__enter">
+            <button>Enter Game</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".contain__enter").addEventListener("click", ()=>{
+            document.querySelector(".load").style.display="block"
+            document.body.style.backgroundColor = "black";
+            document.querySelector(".videoBackground").style.opacity = "0.4";
+            document.querySelector(".title").style.opacity = "0.4";
+            document.querySelector(".contain__enter").style.opacity = "0.4";
+            document.querySelector(".contain__enter").disable=true
+            setTimeout(()=>{
+                window.location.href="home.html"
+            }, 1500)
+        })
+    </script>
+<!--    <script src="asset/js/sound.js"></script>-->
+
+
+</body>
+</html>

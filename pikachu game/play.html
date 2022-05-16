@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play</title>
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <!--css-->
+    <link rel="stylesheet" href="asset/css/base.css">
+    <link rel="stylesheet" href="asset/css/play.css">
+</head>
+<audio id="audio"  src="/asset/audio/Error-sound.mp3">
+    <source preload="audio" src="/asset/audio/Error-sound.mp3">
+    =  Your browser does not support the audio element.
+</audio>
+<main>
+    <audio id="audioBase" autoplay preload="audio" src="/asset/audio/FairyTail.mp3"></audio>
+    <audio id="audioGame" preload="audio" src="/asset/audio/Wrong.mp3"></audio>
+    <div class="contain" id="contain__background">
+        <div class="contain__bar">
+            <div class="bar__level" style="display: flex">
+                <h2 id="level">Level 1</h2>
+    <!--                <p id="al">alo</p>-->
+            </div>
+            <div class="bar__hint">
+                <div class="item">
+                    score: <span id="item__score">0</span>
+                </div>
+                <div class="item" id="changeImage">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                <div class="item" id="hint">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="bar__time">
+                <div class="time__frame">
+                    <div class="time__value"></div>
+                </div>
+            </div>
+            <div class="bar__option">
+                <div class="option">
+                    X
+                </div>
+            </div>
+        </div>
+        <div class="contain__content">
+            <div class="gif" style="padding-left: 40px">
+                <img src="/asset/img/background/gif2.webp" alt="" width="120px" height="120px">
+            </div>
+            <div class="contain__matrix">
+                <div class="matrix">
+                </div>
+            </div>
+            <div class="gif" style="padding-right: 40px">
+                <img src="/asset/img/background/gif3.gif" alt="" width="120px" height="120px">
+            </div>
+        </div>
+
+        <div class="contain__manage">
+            <div class="manage__close">X</div>
+            <div class="manage__item"><a href="home.html">home</a></div>
+            <div class="manage__item" id="manage__resume">resume</div>
+            <div class="manage__item" id="manage__restart">restart</div>
+            <div class="manage__item" id="manage__sound">sound</div>
+            <div class="manage__item">quit</div>
+        </div>
+    </div>
+
+</main>
+
+
+
+<div class="contain__bar-sound">
+    <div class="contain__bar-close" id="closeBar">X</div>
+    <div class="bar__title">Base sound</div>
+    <div class="bar_a">
+        <span class="volume" id="volumeBase"><i class="fas fa-volume-up"></i></span>
+        <div class="bar" id="barBaseSound">
+            <div class="bar__valid" id="baseSound" data-volume="volumeBase">
+                <div class="bar__button"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bar__title">Game sound</div>
+    <div class="bar_a">
+        <span class="volume" id="volumeGame"><i class="fas fa-volume-up"></i></span>
+        <div class="bar" id="barGameSound">
+            <div class="bar__valid" id="gameSound" data-volume="volumeGame">
+                <div class="bar__button"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--js-->
+<!--    <script  src="asset/js/manage.js"></script>-->
+    <script src="asset/js/sound.js"></script>
+    <script src="asset/js/time-bar.js"></script>
+    <script src="asset/js/algorithm/algorithm/minMax.js"></script>
+    <script type="module" src="asset/js/algorithm/base.js"></script>
+
+</body>
+</html>

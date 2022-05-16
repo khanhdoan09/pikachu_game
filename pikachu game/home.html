@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pikachu Game</title>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <!--font awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="asset/css/home.css">
+</head>
+<body>
+
+
+
+    <div class="contain">
+        <div class="contain__option">
+            <audio id="audioBase" autoplay preload="audio" src="/asset/audio/airyTail.mp3"></audio>
+            <audio id="audioGame" preload="audio" src="/asset/audio/CityOfStarsHumming.mp3"></audio>
+
+            <!--            <audio id="audioBase" src="/asset/audio/FairyTail.mp3">-->
+<!--            </audio>-->
+            <button class="option"><a id="start">start</a></button>
+            <button class="option" id="level">level
+            </button>
+            <button class="option">guide</button>
+            <button class="option" id="sound">setting</button>
+            <button class="option">exit</button>
+        </div>
+
+        <div class="contain__level">
+            <div class="level" id="level1"><a href="play.html?level=1">level 1</a></div>
+            <div class="level" id="level2"><a href="play.html?level=2">level 2</a></div>
+            <div class="level" id="level3"><a href="play.html?level=3">level 3</a></div>
+            <div class="level" id="level4"><a href="play.html?level=4">level 4</a></div>
+            <div class="level" id="level5"><a href="play.html?level=5">level 5</a></div>
+            <div class="level" id="level6"><a href="play.html?level=6">level 6</a></div>
+        </div>
+
+        <div class="contain__bar-sound">
+<!--            <div class="contain__bar-close" id="closeBar">X</div>-->
+            <div class="bar__title">Base sound
+            </div>
+            <div class="bar_a">
+                <span class="volume" id="volumeBase"><i class="fas fa-volume-up"></i></span>
+                <div class="bar" id="barBaseSound">
+                    <div class="bar__valid" id="baseSound" data-volume="volumeBase">
+                        <div class="bar__button"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar__title">Game sound</div>
+            <div class="bar_a">
+                <span class="volume" id="volumeGame"><i class="fas fa-volume-up"></i></span>
+                <div class="bar" id="barGameSound">
+                    <div class="bar__valid" id="gameSound" data-volume="volumeGame">
+                        <div class="bar__button"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--js-->
+    <script src="asset/js/sound.js"></script>
+    <script src="asset/js/option.js"></script>
+    <script>
+        document.querySelector("#start").addEventListener("click", (e)=>{
+            e.preventDefault()
+            let audioBaseSound = document.querySelector("#audioBase")
+            let audioGameSound = document.querySelector("#audioGame")
+            window.location.href=`play.html?level=1&volumeBase=${audioBaseSound.volume}&volumeGame=${audioGameSound.volume}`
+        })
+    </script>
+    <script>
+        let activeSound = false
+        document.querySelector("#sound").addEventListener('click', ()=>{
+            if(!activeSound){
+                activeSound=!activeSound
+                document.querySelector("#sound").style.backgroundColor="#000066"
+                document.querySelector(".contain__bar-sound").classList.remove("contain__bar-sound--hidden")
+                document.querySelector(".contain__bar-sound").classList.add("contain__bar-sound--visible")
+            }
+            else {
+                activeSound=!activeSound
+                // document.querySelector(".contain__bar-sound").classList.remove("contain__bar-sound--visible")
+                document.querySelector(".contain__bar-sound").classList.add("contain__bar-sound--hidden")
+                document.querySelector("#sound").style.backgroundColor="#006699"
+            }
+        })
+
+        // document.querySelector("#closeBar").addEventListener('click', ()=>{
+        //         activeSound=!activeSound
+        //         document.querySelector(".contain__bar-sound").style.display="none"
+        //         document.querySelector("#sound").style.backgroundColor="#006699"
+        //
+        // })
+
+
+    </script>
+
+</body>
+
+</html>
