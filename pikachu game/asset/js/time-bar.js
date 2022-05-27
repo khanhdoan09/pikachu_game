@@ -16,8 +16,11 @@ class Time {
         if (this.valueBar === 0) {
             clearInterval(this.intervalBar)
             this.isEndGame = true
-            alert("end")
+            timeValue.style.display="none"
+            document.querySelector(".main").style.opacity = 0.5
+            document.querySelector(".contain__game-over").style.display = "block"
         }
     }
-
 }
+
+export {Time}

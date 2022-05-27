@@ -19,6 +19,10 @@ a {
   text-decoration: none !important;
 }
 
+i {
+  cursor: pointer;
+}
+
 .videoBackground {
   min-width: 100% !important;
   max-width: 100% !important;
@@ -217,6 +221,14 @@ body {
 }
 .load {
   display: none;
+}
+
+#mute {
+  color: #575102;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
 }
 
 /*# sourceMappingURL=intro.css.map */

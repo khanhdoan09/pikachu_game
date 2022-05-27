@@ -1,4 +1,4 @@
-import {objLabelHint, numberImgBlock, numberOfTypeBLock} from "../base.js";
+import {objLabelHint, numberImgBlock, numberOfTypeBLock, arr} from "../base.js";
 
 function changeImage() {
     let arrImgChosen = []
@@ -21,6 +21,8 @@ function changeImage() {
             let xTmp = arrTmp[j].x
             let yTmp = arrTmp[j].y
             document.querySelector("#block" + xTmp.toString() + yTmp.toString()).style.backgroundImage = `url('/asset/img/block/${newImg}.png')`;
+            // arr[xTmp][yTmp].label=newImg
+
         }
     }
 }

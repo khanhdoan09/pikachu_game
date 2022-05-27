@@ -3,6 +3,7 @@ import {loadLevel} from "./load/loadLevel.js";
 import {loadHint} from "./load/loadHint.js";
 import {changeImage} from "./change/changeImage.js";
 import {loadMatrixLevel} from "./load/loadMatrixLevel.js";
+import {score} from "./algorithm/object.js";
 
 let numberOfTypeBLock = 24
 let numberImgBlock = 37
@@ -12,6 +13,7 @@ let arr = []
 var arrBlockLeft = []
 let rightChooseBlocks
 let objLabelHint = {}
+let totalBlock = numberOfRow * numberOfColumn
 
 window.addEventListener('load', function () {
     loadLevel().then(level => rightChooseBlocks = level)
@@ -25,6 +27,14 @@ window.addEventListener('load', function () {
 
 })
 
+function playAgain() {
+    document.querySelector("#playAgain").addEventListener("click", ()=>{
+        window.location.href=`play.html?level=1`
+    })
+}
+
+
+
 // for export
 function changeArr(newArr) {
     arr = newArr
@@ -32,6 +42,10 @@ function changeArr(newArr) {
 
 function changeArrBlockLeft(newArrBlockLeft) {
     arrBlockLeft = newArrBlockLeft
+}
+
+function changeTotalBlock() {
+    totalBlock-=2
 }
 
 export {
@@ -44,5 +58,7 @@ export {
     numberImgBlock,
     numberOfTypeBLock,
     changeArrBlockLeft,
-    changeArr
+    changeArr,
+    totalBlock,
+    changeTotalBlock
 }

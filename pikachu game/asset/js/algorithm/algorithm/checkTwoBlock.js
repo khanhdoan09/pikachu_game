@@ -1,14 +1,13 @@
 import {drawHorizontalBar, drawVerticalBar, drawX, drawY} from "./line.js";
-import BlockItem from "./block.js";
+import {BlockItem} from "./object.js";
 import {arr, numberOfColumn, numberOfRow} from "../base.js";
 
 function checkTwoBlock(blockDeparture, blockDestination) {
+
     if (arr[blockDeparture.x][blockDeparture.y].label != arr[blockDestination.x][blockDestination.y].label) {
         return false
     }
     if (checkInLine(blockDeparture, blockDestination)) {
-        // document.querySelector("#al").textContent = "inline"
-        // reduceInArrBlockLeft(blockDeparture, blockDestination)
         return true
     }
     else {
@@ -19,10 +18,8 @@ function checkTwoBlock(blockDeparture, blockDestination) {
             return false
         }
         else if (checkOutSide(blockDeparture, blockDestination)) {
-            // reduceInArrBlockLeft(blockDeparture, blockDestination)
             return true
         } else if (checkInSide(blockDeparture, blockDestination)) {
-            // reduceInArrBlockLeft(blockDeparture, blockDestination)
             return true;
         } else {
             return false

@@ -8,10 +8,11 @@ $black__light-color: #04046e;
 $blue-color: #212131;
 $coffee__color: #5d3802;
 $white-color:  #e2e6e9;
-$white__green-color: #cceedd;
+$white__green-color: #58e5a1;
 $white__primary-color: #414040;
 $midnight-blue__color: #000066;
 $grey-color: #6c6666;
+$grey__light-color: #374348;
 $yellow-color: rgba(239, 227, 3, 0.85);
 $skin-color: #eee7ba;
 $red-color: red;
@@ -38,5 +39,8 @@ html, body {
 a {
   color: $white-color;
   text-decoration: none !important;
+}
 
+i {
+  cursor: pointer;
 }

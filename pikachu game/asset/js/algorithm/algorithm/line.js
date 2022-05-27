@@ -1,4 +1,4 @@
-import BlockItem from "./block.js";
+import {BlockItem} from "./object.js";
 
 function drawHorizontalBar(blockDeparture, blockDestination) {
     let line = document.createElement("div")
